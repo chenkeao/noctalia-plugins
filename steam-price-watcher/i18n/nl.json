@@ -3,11 +3,9 @@
     "loading": "Controleren...",
     "no-games": "Geen games",
     "game": "game",
-    "games": "games",
-    "of": "van",
+    "games": "games",    "of": "van",
     "on-target-section": "🎯 Games op doelprijs",
-    "monitoring-section": "👀 Monitoring",
-    "refresh": "Prijzen verversen",
+    "monitoring-section": "👀 Monitoring",    "refresh": "Prijzen verversen",
     "loading-prices": "Prijzen laden...",
     "no-games-message": "Geen games toegevoegd. Voeg games toe in instellingen.",
     "current-price": "💰 Huidig:",
@@ -52,7 +50,6 @@
       "target-price-label": "Doelprijs ($):",
       "target-price-hint": "💡 We raden 20% onder de huidige prijs aan voor goede deals.",
       "settings-saved": "Plugin-instellingen opgeslagen."
-    },
-    "open-settings": "Instellingen Openen"
+    }
   }
 }

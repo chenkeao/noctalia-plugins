@@ -9,22 +9,36 @@ Monitor Steam game prices and get notified when they reach your target price.
 - 🔔 **Desktop Notifications**: Get notified via notify-send when games reach your target price
 - 📊 **Visual Indicator**: Bar widget shows a notification dot when games are at target price
 - 💰 **Price Comparison**: See current price vs. target price with discount percentages
-- ⚙️ **Easy Configuration**: Search games by App ID and add them to your watchlist
+- ⚙️ **Easy Configuration**: Search games by Steam App ID and add them to your watchlist
 - 🔄 **Automatic Updates**: Prices are checked automatically based on your interval setting
-- 🌍 **Multi-Currency**: Support for 40+ Steam currencies
 
 ## How to Use
 
 ### Adding Games to Watchlist
 
 1. Open the plugin settings
-2. Enter the Steam App ID in the search field
-   - You can find the App ID in the game's Steam store page URL
-   - Example: For CS2 the URL is `store.steampowered.com/app/730/`, so the App ID is `730`
+2. Enter the game name in the search field
+   - Example: "Counter Strike", "GTA", "Cyberpunk"
 3. Click "Search"
-4. The plugin will fetch the game details
-5. Set your target price (the plugin suggests 20% below current price)
-6. Click "Add to Watchlist"
+4. The plugin will show up to 5 matching games
+5. Click "Add" on the game you want to monitor
+6. Set your target price (the plugin suggests 20% below current price)
+7. Click "Add to Watchlist"
+
+### Game Search
+
+Simply type the game name and the plugin will search Steam's database:
+
+### Game Search
+
+Simply type the game name and the plugin will search Steam's database:
+
+- **Counter Strike** → Shows CS:GO, CS2, etc.
+- **GTA** → Shows GTA V, GTA IV, etc.
+- **Cyberpunk** → Shows Cyberpunk 2077
+- **Red Dead** → Shows Red Dead Redemption 2
+
+The search returns up to 5 results. Select the game you want and add it to your watchlist.
 
 ### Monitoring Prices
 
@@ -52,14 +66,12 @@ In the panel (click the widget):
 - **Check Interval**: How often to check prices (15-1440 minutes)
   - Default: 30 minutes
   - ⚠️ Very short intervals may result in many API requests
-- **Currency**: Choose from 40+ supported Steam currencies
-  - USD, EUR, GBP, BRL, PLN, JPY, CNY, and many more
-- **Game Search**: Search and add games by Steam App ID
+- **Watchlist**: Add or remove games from monitoring
 
 ## Technical Details
 
 - **API**: Uses Steam Store API (`store.steampowered.com/api/appdetails`)
-- **Currency**: Supports 40+ currencies (USD, EUR, GBP, BRL, PLN, JPY, CNY, RUB, etc.)
+- **Currency**: Prices are fetched in BRL (Brazilian Real)
 - **Data Storage**: Settings are stored in Noctalia's plugin configuration
 - **Notifications**: Uses notify-send for desktop notifications
 
@@ -86,11 +98,6 @@ In the panel (click the widget):
 - Chinese Simplified (zh-CN)
 
 ## Changelog
-
-### Version 1.1.0
-
-- Expanded currency support from 10 to 40+ currencies
-- All major Steam-supported currencies now available (ARS, AUD, BRL, CAD, CHF, CLP, CNY, COP, CZK, DKK, EUR, GBP, HKD, HUF, IDR, ILS, INR, JPY, KRW, KZT, MXN, MYR, NOK, NZD, PEN, PHP, PLN, QAR, RON, RUB, SAR, SEK, SGD, THB, TRY, TWD, UAH, USD, UYU, VND, ZAR)
 
 ### Version 1.0.0
 
@@ -126,7 +133,7 @@ This plugin follows the same license as Noctalia Shell.
 **Solution**: Make sure notify-send is installed and working on your system
 
 **Problem**: "No games found" when searching
-**Solution**: Verify the App ID is correct and the game exists on Steam
+**Solution**: Verify the App ID or Name is correct and the game exists on Steam
 
 **Problem**: Prices not updating
 **Solution**: Click the refresh button in the panel or wait for the next automatic check
@@ -135,8 +142,8 @@ This plugin follows the same license as Noctalia Shell.
 
 Potential features for future versions:
 
-- Price history tracking and charts
-- Historical low price information (integration with SteamDB or ITAD)
+- Support for multiple currencies
+- Price history tracking
+- Historical low price information
 - Steam sale event notifications
-- Bulk price threshold adjustments
-- Export/import watchlist to JSON
+- Wishlist import from Steam

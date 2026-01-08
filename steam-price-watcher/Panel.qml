@@ -251,7 +251,7 @@ Item {
 
             NIconButton {
               icon: "refresh"
-              tooltipText: pluginApi?.tr("steam-price-watcher.refresh") || "Refresh prices"
+              tooltipText: pluginApi?.tr("steam-price-watcher.refresh") || "Atualizar preços"
               baseSize: Style.baseWidgetSize * 0.8
               enabled: !loading
               onClicked: refreshPrices()

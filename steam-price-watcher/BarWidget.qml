@@ -83,10 +83,10 @@ Rectangle {
   function checkPrices() {
     if (loading || watchlist.length === 0) return;
     loading = true;
-
+    
     // Limpar lista de jogos que atingiram o alvo para revalidar
     gamesOnTarget = [];
-
+    
     var games = [];
     for (var i = 0; i < watchlist.length; i++) {
       var game = watchlist[i];
@@ -317,16 +317,11 @@ Rectangle {
     anchors.fill: parent
     hoverEnabled: true
     cursorShape: Qt.PointingHandCursor
-    acceptedButtons: Qt.LeftButton | Qt.RightButton
+    acceptedButtons: Qt.LeftButton
 
-    onClicked: (mouse) => {
+    onClicked: {
       if (pluginApi) {
-        if (mouse.button === Qt.LeftButton) {
-          pluginApi.openPanel(screen);
-        } else if (mouse.button === Qt.RightButton) {
-          // Show how to open Settings (no direct API available)
-          ToastService.showNotice("To open Settings:\nRight click bar → Plugins → Steam Price Watcher → Settings");
-        }
+        pluginApi.openPanel(screen);
       }
     }
 
@@ -335,7 +330,7 @@ Rectangle {
         TooltipService.show(root, tooltipText, BarService.getTooltipDirection());
       }
     }
-
+    
     onExited: {
       TooltipService.hide();
     }

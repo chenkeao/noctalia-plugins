@@ -14,9 +14,7 @@
     "target-price": "🎯 Hedef:",
     "edit-price": "Fiyatı düzenle",
     "remove": "Kaldır",
-    "target-reached": "Hedef fiyata ulaşıldı!",
-    "below-target": "hedefin altında",
-    "above-target": "hedefin üstünde",
+    "target-reached": "Hedef fiyata ulaşıldı!",    "below-target": "hedefin altında",    "above-target": "hedefin üstünde",
     "edit-target-price": "Hedef Fiyatı Düzenle",
     "cancel": "İptal",
     "save": "Kaydet",
@@ -52,7 +50,6 @@
       "target-price-label": "Hedef fiyat ($):",
       "target-price-hint": "💡 İyi fırsatlar için güncel fiyatın %80'ini öneriyoruz.",
       "settings-saved": "Eklenti ayarları kaydedildi."
-    },
-    "open-settings": "Ayarları Aç"
+    }
   }
 }
