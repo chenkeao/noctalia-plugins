@@ -12,7 +12,7 @@ ColumnLayout {
   spacing: Style.marginM
 
   property var pluginApi: null
-  
+
   // Configuration
   property var cfg: pluginApi?.pluginSettings || ({})
   property var defaults: pluginApi?.manifest?.metadata?.defaultSettings || ({})
@@ -36,7 +36,7 @@ ColumnLayout {
   }
 
   NText {
-    text: pluginApi?.tr("steam-price-watcher.settings.description") || 
+    text: pluginApi?.tr("steam-price-watcher.settings.description") ||
       "Configure o intervalo de verificação e adicione jogos à sua watchlist pesquisando na Steam."
     color: Color.mOnSurfaceVariant
     pointSize: Style.fontSizeM
@@ -78,7 +78,7 @@ ColumnLayout {
           Layout.preferredWidth: 80 * Style.uiScaleRatio
           Layout.preferredHeight: Style.baseWidgetSize
           text: checkInterval.toString()
-          
+
           onTextChanged: {
             var val = parseInt(text);
             if (!isNaN(val) && val >= 15 && val <= 1440) {
@@ -98,7 +98,7 @@ ColumnLayout {
       }
 
       NText {
-        text: pluginApi?.tr("steam-price-watcher.settings.interval-warning") || 
+        text: pluginApi?.tr("steam-price-watcher.settings.interval-warning") ||
           "⚠️ Intervalos muito curtos podem resultar em muitas requisições à API da Steam."
         color: Color.mError
         pointSize: Style.fontSizeS
@@ -137,16 +137,45 @@ ColumnLayout {
 
       ListModel {
         id: currencyModel
-        ListElement { name: "🇧🇷 Real Brasileiro (R$)"; key: "br" }
-        ListElement { name: "🇺🇸 Dólar Americano (USD)"; key: "us" }
-        ListElement { name: "🇪🇺 Euro (EUR)"; key: "eu" }
         ListElement { name: "🇦🇷 Peso Argentino (ARS)"; key: "ar" }
-        ListElement { name: "🇲🇽 Peso Mexicano (MXN)"; key: "mx" }
-        ListElement { name: "🇨🇱 Peso Chileno (CLP)"; key: "cl" }
-        ListElement { name: "🇨🇴 Peso Colombiano (COP)"; key: "co" }
-        ListElement { name: "🇬🇧 Libra Esterlina (GBP)"; key: "gb" }
-        ListElement { name: "🇨🇦 Dólar Canadense (CAD)"; key: "ca" }
         ListElement { name: "🇦🇺 Dólar Australiano (AUD)"; key: "au" }
+        ListElement { name: "🇧🇷 Real Brasileiro (BRL)"; key: "br" }
+        ListElement { name: "🇨🇦 Dólar Canadense (CAD)"; key: "ca" }
+        ListElement { name: "🇨🇭 Franco Suíço (CHF)"; key: "ch" }
+        ListElement { name: "🇨🇱 Peso Chileno (CLP)"; key: "cl" }
+        ListElement { name: "🇨🇳 Yuan Chinês (CNY)"; key: "cn" }
+        ListElement { name: "🇨🇴 Peso Colombiano (COP)"; key: "co" }
+        ListElement { name: "🇨🇷 Colón Costarricense (CRC)"; key: "cr" }
+        ListElement { name: "🇪🇺 Euro (EUR)"; key: "eu" }
+        ListElement { name: "🇬🇧 Libra Esterlina (GBP)"; key: "gb" }
+        ListElement { name: "🇭🇰 Dólar de Hong Kong (HKD)"; key: "hk" }
+        ListElement { name: "🇮🇩 Rupia Indonésia (IDR)"; key: "id" }
+        ListElement { name: "🇮🇱 Novo Shekel Israelense (ILS)"; key: "il" }
+        ListElement { name: "🇮🇳 Rupia Indiana (INR)"; key: "in" }
+        ListElement { name: "🇯🇵 Iene Japonês (JPY)"; key: "jp" }
+        ListElement { name: "🇰🇷 Won Sul-Coreano (KRW)"; key: "kr" }
+        ListElement { name: "🇰🇼 Dinar Kuwaitiano (KWD)"; key: "kw" }
+        ListElement { name: "🇰🇿 Tenge Cazaque (KZT)"; key: "kz" }
+        ListElement { name: "🇲🇽 Peso Mexicano (MXN)"; key: "mx" }
+        ListElement { name: "🇲🇾 Ringgit Malaio (MYR)"; key: "my" }
+        ListElement { name: "🇳🇴 Coroa Norueguesa (NOK)"; key: "no" }
+        ListElement { name: "🇳🇿 Dólar Neozelandês (NZD)"; key: "nz" }
+        ListElement { name: "🇵🇪 Sol Peruano (PEN)"; key: "pe" }
+        ListElement { name: "🇵🇭 Peso Filipino (PHP)"; key: "ph" }
+        ListElement { name: "🇵🇱 Zloty Polonês (PLN)"; key: "pl" }
+        ListElement { name: "🇶🇦 Riyal Catariano (QAR)"; key: "qa" }
+        ListElement { name: "🇷🇺 Rublo Russo (RUB)"; key: "ru" }
+        ListElement { name: "🇸🇦 Riyal Saudita (SAR)"; key: "sa" }
+        ListElement { name: "🇸🇪 Coroa Sueca (SEK)"; key: "se" }
+        ListElement { name: "🇸🇬 Dólar de Singapura (SGD)"; key: "sg" }
+        ListElement { name: "🇹🇭 Baht Tailandês (THB)"; key: "th" }
+        ListElement { name: "🇹🇷 Lira Turca (TRY)"; key: "tr" }
+        ListElement { name: "🇹🇼 Dólar de Taiwan (TWD)"; key: "tw" }
+        ListElement { name: "🇺🇦 Hryvnia Ucraniana (UAH)"; key: "ua" }
+        ListElement { name: "🇺🇸 Dólar Americano (USD)"; key: "us" }
+        ListElement { name: "🇺🇾 Peso Uruguaio (UYU)"; key: "uy" }
+        ListElement { name: "🇻🇳 Dong Vietnamita (VND)"; key: "vn" }
+        ListElement { name: "🇿🇦 Rand Sul-Africano (ZAR)"; key: "za" }
       }
 
       NComboBox {
@@ -157,12 +186,17 @@ ColumnLayout {
         onSelected: key => {
           if (pluginApi && pluginApi.pluginSettings) {
             pluginApi.pluginSettings.currency = key;
-            
+
             // Define o símbolo da moeda
             var symbols = {
-              "br": "R$", "us": "$", "eu": "€", "ar": "ARS$",
-              "mx": "MXN$", "cl": "CLP$", "co": "COP$",
-              "gb": "£", "ca": "CAD$", "au": "AUD$"
+              "ar": "ARS$", "au": "A$", "br": "R$", "ca": "CA$", "ch": "CHF",
+              "cl": "CLP$", "cn": "¥", "co": "COL$", "cr": "₡", "eu": "€",
+              "gb": "£", "hk": "HK$", "id": "Rp", "il": "₪", "in": "₹",
+              "jp": "¥", "kr": "₩", "kw": "KD", "kz": "₸", "mx": "Mex$",
+              "my": "RM", "no": "kr", "nz": "NZ$", "pe": "S/", "ph": "₱",
+              "pl": "zł", "qa": "QR", "ru": "₽", "sa": "SR", "se": "kr",
+              "sg": "S$", "th": "฿", "tr": "₺", "tw": "NT$", "ua": "₴",
+              "us": "$", "uy": "$U", "vn": "₫", "za": "R"
             };
             pluginApi.pluginSettings.currencySymbol = symbols[key] || "$";
             pluginApi.saveSettings();
@@ -171,6 +205,7 @@ ColumnLayout {
       }
     }
   }
+
 
   // Search section
   NBox {
@@ -191,7 +226,7 @@ ColumnLayout {
       }
 
       NText {
-        text: pluginApi?.tr("steam-price-watcher.settings.search-hint") || 
+        text: pluginApi?.tr("steam-price-watcher.settings.search-hint") ||
           "Pesquise jogos pelo nome. Digite o nome do jogo e clique em Pesquisar."
         color: Color.mOnSurfaceVariant
         pointSize: Style.fontSizeS
@@ -207,7 +242,7 @@ ColumnLayout {
           id: searchInput
           Layout.fillWidth: true
           Layout.preferredHeight: Style.baseWidgetSize
-          placeholderText: pluginApi?.tr("steam-price-watcher.settings.search-placeholder") || 
+          placeholderText: pluginApi?.tr("steam-price-watcher.settings.search-placeholder") ||
             "Digite o nome do jogo (ex: Counter Strike)"
         }
 
@@ -229,7 +264,7 @@ ColumnLayout {
         color: Color.mOnSurfaceVariant
         pointSize: Style.fontSizeM
         Layout.fillWidth: true
-        
+
         NIcon {
           id: loadingIcon
           anchors.left: parent.left
@@ -238,7 +273,7 @@ ColumnLayout {
           icon: "loader"
           pointSize: Style.fontSizeM
           color: Color.mPrimary
-          
+
           RotationAnimator on rotation {
             running: searching
             from: 0
@@ -283,20 +318,20 @@ ColumnLayout {
                 radius: Style.iRadiusS
                 border.color: Color.mOutline
                 border.width: 1
-                
+
                 Image {
                   anchors.fill: parent
                   anchors.margins: 1
                   source: `https://cdn.cloudflare.steamstatic.com/steam/apps/${modelData.appId}/capsule_184x69.jpg`
                   fillMode: Image.PreserveAspectFit
                   asynchronous: true
-                  
+
                   Rectangle {
                     anchors.fill: parent
                     color: Color.mSurfaceVariant
                     visible: parent.status === Image.Loading || parent.status === Image.Error
                     radius: Style.iRadiusS
-                    
+
                     NIcon {
                       anchors.centerIn: parent
                       icon: "gamepad"
@@ -335,7 +370,7 @@ ColumnLayout {
                   }
 
                   NText {
-                    text: modelData.price ? `${root.currencySymbol} ${modelData.price.toFixed(2)}` : 
+                    text: modelData.price ? `${root.currencySymbol} ${modelData.price.toFixed(2)}` :
                       (pluginApi?.tr("steam-price-watcher.settings.free") || "Gratuito")
                     color: Color.mPrimary
                     pointSize: Style.fontSizeM
@@ -344,7 +379,7 @@ ColumnLayout {
                 }
 
                 NButton {
-                  text: isGameInWatchlist(modelData.appId) ? 
+                  text: isGameInWatchlist(modelData.appId) ?
                     (pluginApi?.tr("steam-price-watcher.settings.added") || "✓ Adicionado") :
                     (pluginApi?.tr("steam-price-watcher.settings.add") || "+ Adicionar")
                   enabled: !isGameInWatchlist(modelData.appId)
@@ -358,7 +393,7 @@ ColumnLayout {
               }
 
               NText {
-                text: pluginApi?.tr("steam-price-watcher.settings.free-game-note") || 
+                text: pluginApi?.tr("steam-price-watcher.settings.free-game-note") ||
                   "Jogos gratuitos não podem ser adicionados à watchlist."
                 color: Color.mOnSurfaceVariant
                 pointSize: Style.fontSizeS
@@ -374,7 +409,7 @@ ColumnLayout {
       // No results message
       NText {
         visible: !searching && searchResults.length === 0 && searchQuery.length > 0
-        text: pluginApi?.tr("steam-price-watcher.settings.no-results") || 
+        text: pluginApi?.tr("steam-price-watcher.settings.no-results") ||
           "Nenhum jogo encontrado. Verifique o App ID e tente novamente."
         color: Color.mOnSurfaceVariant
         pointSize: Style.fontSizeM
@@ -395,7 +430,7 @@ ColumnLayout {
         }
 
         NText {
-          text: pluginApi?.tr("steam-price-watcher.settings.current-watchlist") || 
+          text: pluginApi?.tr("steam-price-watcher.settings.current-watchlist") ||
             `Watchlist atual (${watchlist.length} ${watchlist.length === 1 ? "jogo" : "jogos"})`
           color: Color.mOnSurface
           pointSize: Style.fontSizeM
@@ -435,20 +470,20 @@ ColumnLayout {
                   radius: Style.iRadiusS
                   border.color: Color.mOutline
                   border.width: 1
-                  
+
                   Image {
                     anchors.fill: parent
                     anchors.margins: 1
                     source: `https://cdn.cloudflare.steamstatic.com/steam/apps/${modelData.appId}/capsule_184x69.jpg`
                     fillMode: Image.PreserveAspectFit
                     asynchronous: true
-                    
+
                     Rectangle {
                       anchors.fill: parent
                       color: Color.mSurfaceVariant
                       visible: parent.status === Image.Loading || parent.status === Image.Error
                       radius: Style.iRadiusS
-                      
+
                       NIcon {
                         anchors.centerIn: parent
                         icon: "gamepad"
@@ -473,7 +508,7 @@ ColumnLayout {
                   }
 
                   NText {
-                    text: modelData.addedDate ? 
+                    text: modelData.addedDate ?
                       `${new Date(modelData.addedDate).toLocaleDateString('pt-BR')}` :
                       `App ID: ${modelData.appId}`
                     color: Color.mOnSurfaceVariant
@@ -570,7 +605,7 @@ ColumnLayout {
         }
 
         NText {
-          text: addGameDialog.gameData && addGameDialog.gameData.price ? 
+          text: addGameDialog.gameData && addGameDialog.gameData.price ?
             `${root.currencySymbol} ${addGameDialog.gameData.price.toFixed(2)}` : ""
           color: Color.mOnSurface
           pointSize: Style.fontSizeM
@@ -593,13 +628,13 @@ ColumnLayout {
           Layout.fillWidth: true
           Layout.preferredHeight: Style.baseWidgetSize
           text: "0.00"
-          
+
           property var numberValidator: DoubleValidator {
             bottom: 0
             decimals: 2
             notation: DoubleValidator.StandardNotation
           }
-          
+
           Component.onCompleted: {
             if (inputItem) {
               inputItem.validator = numberValidator;
@@ -608,7 +643,7 @@ ColumnLayout {
         }
 
         NText {
-          text: pluginApi?.tr("steam-price-watcher.settings.target-price-hint") || 
+          text: pluginApi?.tr("steam-price-watcher.settings.target-price-hint") ||
             "💡 Sugerimos 20% abaixo do preço atual para boas ofertas."
           color: Color.mOnSurfaceVariant
           pointSize: Style.fontSizeXS
@@ -647,7 +682,7 @@ ColumnLayout {
     searching = true;
     searchQuery = query;
     searchResults = [];
-    
+
     // Search by game name using Steam's search API
     searchGamesByName(query);
   }
@@ -659,7 +694,7 @@ ColumnLayout {
         running: true
         command: ["curl", "-s", "https://steamcommunity.com/actions/SearchApps/${encodeURIComponent(gameName)}"]
         stdout: StdioCollector {}
-        
+
         onExited: (exitCode) => {
           if (exitCode === 0) {
             try {
@@ -668,7 +703,7 @@ ColumnLayout {
                 // Fetch prices for the top 5 results
                 var topResults = results.slice(0, 5);
                 root.pendingFetches = topResults.length;
-                
+
                 for (var i = 0; i < topResults.length; i++) {
                   root.fetchGamePrice(topResults[i].appid, topResults[i].name);
                 }
@@ -685,7 +720,7 @@ ColumnLayout {
             root.searchResults = [];
             root.searching = false;
           }
-          
+
           destroy();
         }
       }
@@ -703,7 +738,7 @@ ColumnLayout {
         stdout: StdioCollector {}
         property int gameAppId: ${appId}
         property string gameNameStr: "${gameName.replace(/"/g, '\\"')}"
-        
+
         onExited: (exitCode) => {
           if (exitCode === 0) {
             try {
@@ -715,11 +750,11 @@ ColumnLayout {
                   name: appData.data.name || gameNameStr,
                   price: 0
                 };
-                
+
                 if (appData.data.price_overview) {
                   game.price = appData.data.price_overview.final / 100;
                 }
-                
+
                 // Add to results
                 var temp = root.searchResults.slice();
                 temp.push(game);
@@ -729,7 +764,7 @@ ColumnLayout {
               console.error("Error parsing Steam API response:", e);
             }
           }
-          
+
           root.pendingFetches--;
           if (root.pendingFetches === 0) {
             root.searching = false;
@@ -758,11 +793,11 @@ ColumnLayout {
         targetPrice: targetPrice,
         addedDate: new Date().toISOString()
       });
-      
+
       pluginApi.pluginSettings.watchlist = temp;
       pluginApi.saveSettings();
       console.log("Steam Price Watcher: Added", game.name, "with target price", targetPrice);
-      
+
       // Clear search
       searchInput.text = "";
       searchResults = [];
@@ -774,7 +809,7 @@ ColumnLayout {
     if (pluginApi && pluginApi.pluginSettings) {
       var temp = watchlist.slice();
       var removed = temp.splice(index, 1);
-      
+
       // Remover jogo da lista de notificados
       if (removed.length > 0) {
         var appId = removed[0].appId;
@@ -787,7 +822,7 @@ ColumnLayout {
         }
         pluginApi.pluginSettings.notifiedGames = notifiedTemp;
       }
-      
+
       pluginApi.pluginSettings.watchlist = temp;
       pluginApi.saveSettings();
       console.log("Steam Price Watcher: Removed", removed[0].name, "and cleared from notifications");
@@ -894,7 +929,7 @@ ColumnLayout {
   // Called when user clicks Apply in settings dialog
   function saveSettings() {
     console.log("SteamPriceWatcher: saveSettings() called");
-    
+
     if (!pluginApi) {
       Logger.e("SteamPriceWatcher", "Cannot save settings: pluginApi is null");
       return;
@@ -902,12 +937,12 @@ ColumnLayout {
 
     // Save settings to disk
     pluginApi.saveSettings();
-    
+
     // Show notification
     var message = pluginApi?.tr("steam-price-watcher.settings.settings-saved") || "Plugin settings saved.";
     console.log("SteamPriceWatcher: Showing toast with message:", message);
     ToastService.showNotice(message);
-    
+
     Logger.i("SteamPriceWatcher", "Settings saved successfully");
   }
 }

@@ -14,7 +14,9 @@
     "target-price": "🎯 目标:",
     "edit-price": "编辑价格",
     "remove": "删除",
-    "target-reached": "已达到目标价格!",    "below-target": "低于目标",    "above-target": "高于目标",
+    "target-reached": "已达到目标价格!",
+    "below-target": "低于目标",
+    "above-target": "高于目标",
     "edit-target-price": "编辑目标价格",
     "cancel": "取消",
     "save": "保存",
@@ -50,6 +52,7 @@
       "target-price-label": "目标价格 ($):",
       "target-price-hint": "💡 我们建议设置为当前价格的80%以获得好价格。",
       "settings-saved": "插件设置已保存。"
-    }
+    },
+    "open-settings": "打开设置"
   }
 }

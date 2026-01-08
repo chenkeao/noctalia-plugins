@@ -52,6 +52,7 @@
       "target-price-label": "Precio objetivo ($):",
       "target-price-hint": "💡 Sugerimos 80% del precio actual para buenas ofertas.",
       "settings-saved": "Configuración del plugin guardada."
-    }
+    },
+    "open-settings": "Abrir Configuración"
   }
 }
