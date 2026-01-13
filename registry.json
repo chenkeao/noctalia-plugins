@@ -310,6 +310,18 @@
       "lastUpdated": "2026-01-13T16:11:12+08:00"
     },
     {
+      "id": "translator",
+      "name": "Translator",
+      "version": "1.0.0",
+      "author": "Cleboost",
+      "description": "Quick translate in launcher",
+      "repository": "https://github.com/cleboost/noctalia-translator",
+      "minNoctaliaVersion": "1.0.0",
+      "license": "MIT",
+      "tags": [],
+      "lastUpdated": "2026-01-13T19:03:02+01:00"
+    },
+    {
       "id": "unicode-picker",
       "name": "Unicode Picker",
       "version": "1.0.0",
