@@ -178,7 +178,7 @@ Item {
       root.watchlist = temp;
       root.gamesWithPrices = temp.slice();
       
-      Logger.d("steam-price-watcher", "Removed game", appId, "and cleared from notifications");
+      Logger.d("Steam", "Steam Price Watcher: Removed game", appId, "and cleared from notifications");
     }
     
     refreshPrices();
@@ -193,7 +193,7 @@ Item {
         }
       }
       pluginApi.saveSettings();
-      Logger.d("steam-price-watcher", "Updated target price for", appId, "to", newPrice);
+      Logger.d("Steam", "Steam Price Watcher: Updated target price for", appId, "to", newPrice);
       
       // Remove from notified games to allow re-notification
       var notified = pluginApi.pluginSettings.notifiedGames || [];

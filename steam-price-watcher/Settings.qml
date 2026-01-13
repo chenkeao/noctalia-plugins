@@ -761,7 +761,7 @@ ColumnLayout {
       
       pluginApi.pluginSettings.watchlist = temp;
       pluginApi.saveSettings();
-      Logger.d("steam-price-watcher", "Added", game.name, "with target price", targetPrice);
+      Logger.d("Steam", "Steam Price Watcher: Added", game.name, "with target price", targetPrice);
       
       // Clear search
       searchInput.text = "";
@@ -790,7 +790,7 @@ ColumnLayout {
       
       pluginApi.pluginSettings.watchlist = temp;
       pluginApi.saveSettings();
-      Logger.d("steam-price-watcher", "Removed", removed[0].name, "and cleared from notifications");
+      Logger.d("Steam", "Steam Price Watcher: Removed", removed[0].name, "and cleared from notifications");
     }
   }
 
@@ -800,7 +800,7 @@ ColumnLayout {
       temp[index].targetPrice = newPrice;
       pluginApi.pluginSettings.watchlist = temp;
       pluginApi.saveSettings();
-      Logger.d("steam-price-watcher", "Updated", temp[index].name, "target price to", newPrice);
+      Logger.d("Steam", "Steam Price Watcher: Updated", temp[index].name, "target price to", newPrice);
     }
   }
 
@@ -893,7 +893,7 @@ ColumnLayout {
 
   // Called when user clicks Apply in settings dialog
   function saveSettings() {
-    Logger.d("steam-price-watcher", "saveSettings() called");
+    Logger.d("Steam", "SteamPriceWatcher: saveSettings() called");
     
     if (!pluginApi) {
       Logger.e("SteamPriceWatcher", "Cannot save settings: pluginApi is null");
@@ -905,7 +905,7 @@ ColumnLayout {
     
     // Show notification
     var message = pluginApi?.tr("steam-price-watcher.settings.settings-saved") || "Plugin settings saved.";
-    Logger.d("steam-price-watcher", "Showing toast with message:", message);
+    Logger.d("Steam", "SteamPriceWatcher: Showing toast with message:", message);
     ToastService.showNotice(message);
     
     Logger.i("SteamPriceWatcher", "Settings saved successfully");

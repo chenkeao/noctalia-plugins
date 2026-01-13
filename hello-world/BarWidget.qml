@@ -43,7 +43,7 @@ Rectangle {
       visible: !barIsVertical
       text: root.message
       color: Color.mOnPrimary
-      pointSize: Style.fontSizeS
+      pointSize: Style.barFontSize
       font.weight: Font.Medium
     }
   }
@@ -65,7 +65,7 @@ Rectangle {
     onClicked: {
       if (pluginApi) {
         Logger.i("HelloWorld", "Opening Hello World panel");
-        pluginApi.openPanel(root.screen);
+        pluginApi.openPanel(root.screen, this);
       }
     }
   }
