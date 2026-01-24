@@ -32,7 +32,6 @@
     "not-installed": "Tailscale not installed",
     "settings": "Settings",
     "copy-ip": "Copy IP",
-    "send-files": "Send Files",
     "ssh": "SSH to host",
     "ping": "Ping host"
   },
@@ -55,7 +54,6 @@
     "online": "Online",
     "offline": "Offline",
     "no-peers": "No connected peers",
-    "send-files": "Send Files",
     "admin-console": "Admin Console",
     "terminal-warning": {
       "title": "Terminal Not Configured",
