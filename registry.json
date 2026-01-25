@@ -94,7 +94,7 @@
         "Desktop",
         "Audio"
       ],
-      "lastUpdated": "2026-01-04T21:11:31-05:00"
+      "lastUpdated": "2026-01-25T13:25:41-05:00"
     },
     {
       "id": "github-feed",
@@ -117,7 +117,7 @@
       "id": "hello-world",
       "name": "Hello World",
       "version": "1.0.9",
-      "author": "Noctalia Team <team@noctalia.dev>",
+      "author": "Noctalia Team",
       "description": "A simple Hello World plugin demonstrating functionalities. For developers only.",
       "repository": "https://github.com/noctalia-dev/noctalia-plugins",
       "minNoctaliaVersion": "4.1.2",
@@ -125,7 +125,7 @@
       "tags": [
         "Development"
       ],
-      "lastUpdated": "2026-01-23T09:39:51-05:00"
+      "lastUpdated": "2026-01-25T13:25:41-05:00"
     },
     {
       "id": "hyprland-steam-overlay",
@@ -166,7 +166,7 @@
         "Launcher",
         "Fun"
       ],
-      "lastUpdated": "2026-01-04T21:11:31-05:00"
+      "lastUpdated": "2026-01-25T13:25:41-05:00"
     },
     {
       "id": "keybind-cheatsheet",
@@ -278,7 +278,7 @@
       "id": "privacy-indicator",
       "name": "Privacy Indicator",
       "version": "1.0.10",
-      "author": "Noctalia Team <team@noctalia.dev>",
+      "author": "Noctalia Team",
       "description": "A privacy indicator widget that shows when microphone, camera or screen sharing is active.",
       "repository": "https://github.com/noctalia-dev/noctalia-plugins",
       "minNoctaliaVersion": "3.6.0",
@@ -288,7 +288,7 @@
         "Privacy",
         "Indicator"
       ],
-      "lastUpdated": "2026-01-04T21:11:31-05:00"
+      "lastUpdated": "2026-01-25T13:25:41-05:00"
     },
     {
       "id": "rss-feed",
@@ -314,7 +314,7 @@
         "Bar",
         "Utility"
       ],
-      "lastUpdated": "2026-01-25T12:24:50-05:00"
+      "lastUpdated": "2026-01-25T13:25:41-05:00"
     },
     {
       "id": "screenshot",
@@ -387,7 +387,7 @@
         "Bar",
         "Utility"
       ],
-      "lastUpdated": "2026-01-25T12:24:50-05:00"
+      "lastUpdated": "2026-01-25T13:25:41-05:00"
     },
     {
       "id": "todo",
