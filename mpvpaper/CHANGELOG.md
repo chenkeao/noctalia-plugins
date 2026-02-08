@@ -2,6 +2,10 @@
 
 Here I'll try to document all changes for the mpvpaper plugin.
 
+## 1.6.2 - 2026-02-08
+
+- fix: Fixed stretch fill mode being neglected when launching mpvpaper.
+
 ## 1.6.1 - 2026-02-07
 
 - feat: Added the ability to set the fill mode.

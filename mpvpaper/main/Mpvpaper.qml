@@ -44,7 +44,6 @@ Item {
         let options = [
             `input-ipc-server='${root.mpvSocket}'`,
             `profile='${root.profile}'`,
-            `panscan=${root.fillMode === "fit" ? 0 : 1}`,
             "loop"
         ];
 
@@ -54,6 +53,22 @@ Item {
 
         if (root.isMuted) {
             options.push("no-audio");
+        }
+
+        switch(fillMode){
+            case "fit":
+                options.push("keepaspect=yes");
+                options.push("panscan=0");
+                break;
+            case "crop":
+                options.push("keepaspect=yes");
+                options.push("panscan=1");
+                break;
+            case "stretch":
+                options.push("keepaspect=no");
+                break;
+            default:
+                break;
         }
 
         const optionsString = options.join(" ");
