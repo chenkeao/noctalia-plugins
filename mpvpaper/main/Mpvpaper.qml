@@ -26,6 +26,16 @@ Item {
     required property Thumbnails thumbnails
     required property InnerService innerService
 
+    // Message queue for socket commands
+    property var msgQueue: []
+    
+    Timer {
+        id: socketRetryTimer
+        interval: 200
+        repeat: true
+        running: mpvProc.running && !socket.connected
+        onTriggered: socket.connected = true
+    }
 
     /***************************
     * FUNCTIONS
@@ -76,10 +86,12 @@ Item {
     }
 
     function sendCommandToMPV(command: string) {
-        socket.connected = true;
-        socket.path = mpvSocket;
-        socket.write(`${command}\n`);
-        socket.flush();
+        if (socket.connected) {
+            socket.write(`${command}\n`);
+            socket.flush();
+        } else {
+            msgQueue.push(command);
+        }
     }
 
 
@@ -221,5 +233,16 @@ Item {
     Socket {
         id: socket
         path: root.mpvSocket
+        
+        onConnectedChanged: {
+            if (connected) {
+                while(msgQueue.length > 0) {
+                     var cmd = msgQueue.shift();
+                     socket.write(`${cmd}\n`);
+                }
+                socket.flush();
+            }
+        }
     }
 }
+
